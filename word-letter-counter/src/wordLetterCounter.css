@@ -12,7 +12,7 @@ textarea {
 	padding: 10px; 
 	height: 300px; 
 	margin-bottom: 10px; 
-	border: 1px solid #ccc; 
+	border: 1px solid #fdc0c0; 
 	border-radius: 5px; 
 	font-size: 25px; 
 } 
@@ -20,5 +20,5 @@ textarea {
 p { 
 	font-size: 25px; 
 	margin: 5px 0; 
-	color: #333; 
+	color: #372626; 
 } 
