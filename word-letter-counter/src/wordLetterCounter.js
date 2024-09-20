@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import "./wordLetterCounter.css"; 
+
 
 function WordLetterCount(){
         const [text, setText] = useState("") 
