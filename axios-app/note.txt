@@ -1,0 +1,14 @@
+npx create-react-app <projectname>
+cd <projetname>
+'npm install axios' - To install the axios
+'npm install -g json.server' for global installation of database to work any computer
+'npm install json-server'   for local installation of database
+create a file db.json and enter some json
+create components folder under source folder
+create PersonList.js file under components
+create PersonList.css file under components
+update operations on PersonList.js file
+After done all operation first run the database
+To run the database command is 'json-server --watch db.json --port 3001'
+Then split the terminal and run the server
+To run the server command is 'npm start'
