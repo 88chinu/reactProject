@@ -1,0 +1,6 @@
+create a folder for the project
+npx create-react-app react_router_app
+cd react_router_app
+
+npm install react-router-dom  -for the router dom
+

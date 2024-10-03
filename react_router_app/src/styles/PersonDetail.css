@@ -1,4 +1,4 @@
-.person-edit {
+.person-detail {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,21 +6,9 @@
     color: #dc143c;
 }
 
-.person-edit h1 {
-    margin-bottom: 15px;
-}
-
-.form-container {
-    width: 100%;
-    max-width: 400px;
-}
-
-.input-field {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.person-info {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .person-actions {
@@ -28,11 +16,16 @@
     justify-content: space-between;
     width: 100%;
     max-width: 400px;
-    margin-top: 20px;
 }
 
-.person-actions button {
+.person-actions button,.person-actions a {
     margin: 0 5px;
+    min-width: 100px;
+}
+
+.btn-back {
+    background-color: #007bff !important;
+    color: white !important;
 }
 
 @media (max-width: 480px) {
@@ -40,7 +33,7 @@
         flex-direction: column;
     }
 
-    .person-actions button {
+    .person-actions button,.person-actions a {
         margin: 5px 0;
         width: 100%;
     }
