@@ -1,10 +1,11 @@
 import React from 'react';
 // import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import Notification from './Notification';
+// import { useNavigate } from 'react-router-dom';
+// import Notification from './Notification';
 
+const API_URL = process.env.REACT_APP_API_URL
 const PersonAdd = () => {
-    const API_URL = process.env.REACT_APP_API_URL
+    console.log(API_URL)
     return(
         <div>
             <h2> This page is use for add a new person </h2>

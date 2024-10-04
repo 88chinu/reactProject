@@ -9,7 +9,7 @@ const API_URL = process.env.REACT_APP_API_URL
 
 const PersonList = () => {
     
-            const output = axios.get("https://5000-88chinu-reactproject-p9im85warje.ws-us116.gitpod.io/persons")
+            const output = axios.get("https://5000-88chinu-reactproject-w711qqzf2wh.ws-us116.gitpod.io/persons")
             console.log(output)
             
             console.log(API_URL)
