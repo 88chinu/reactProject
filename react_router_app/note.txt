@@ -1,4 +1,4 @@
-create a folder for the project:
+-> create a folder for the project:
 npx create-react-app react_router_app
 cd react_router_app
 
@@ -6,15 +6,15 @@ npm install axios   - for the axios(npm package for send hhtp request)
 npm install react-router-dom  - for the router dom
 npm install json-server   - for database
 
-add in package.json:
+-> add in package.json:
 "db" : "json-server --watch db.json --port 5000" -  (npm run db) - for run the database
 "start" : "app"   -  (npm run app) - for run the server
 
-create component folder in src with 5 js components DeletePerson.js,NotFound.js,Notification.js,PersonDetail.js,PersonEdit.js,PersonList.js
+-> create component folder in src with 5 js components DeletePerson.js,NotFound.js,Notification.js,PersonDetail.js,PersonEdit.js,PersonList.js
 
-create styles folder in src with 3 css file PersonDetail.css,PersonEdit.css,PersonList.css
+-> create styles folder in src with 3 css file PersonDetail.css,PersonEdit.css,PersonList.css
 
-create a child component in the all js file to check that run correctly or not
+-> create a child component in the all js file to check that run correctly or not
 \eg : import React from 'react';
 const PersonList = () => {
     return(
@@ -24,20 +24,20 @@ const PersonList = () => {
     )}
 export default PersonList;
 
-in App.js import all the js components and define their route path
+-> in App.js import all the js components and define their route path
 
-in App.css defile style of the parent class
+-> in App.css defile style of the parent class
 
-create a json file to store the data
+-> create a json file to store the data
 
-create .env file to store the link of the database
+-> create .env file to store the link of the database
 \eg: REACT_APP_API_URL=https://5000-88chinu-reactproject-w711qqzf2wh.ws-us116.gitpod.io/persons
 
-access the env link in required js components and print that json file
-\eg: //PersonEdit.js file
-import React from 'react';
-const API_URL = process.env.REACT_APP_API_URL
-const PersonEdit = () => {
+-> access the env link in required js components and print that json file
+    \eg: //PersonEdit.js file
+    import React from 'react';
+    const API_URL = process.env.REACT_APP_API_URL
+    const PersonEdit = () => {
     console.log(API_URL)
     return(
         <div className='person-edit'>

@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    font-size: 200%;
-    color: #dc143c;
+    /* font-size: 200%;
+    color: #dc143c; */
 }
 
 .person-list h1 {
