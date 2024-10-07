@@ -1,12 +1,16 @@
-import React from 'react';
-// import axios from 'axios';
+import React from 'react'
 
-const DeletePerson = () => {
+const DeletePerson = ({ id, onDelete }) => {
+    const handleDelete = () => {
+        if (window.confirm('Sure you want to delete this person?')){
+            onDelete(id)
+        }
+    }
     return(
-        <div>
-            <h2> This page is use for delete </h2>
-        </div>
+        <button className='btn btn-delete' onClick={handleDelete}>
+            Delete
+        </button>
     )
 }
 
-export default DeletePerson;
+export default DeletePerson

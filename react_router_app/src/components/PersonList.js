@@ -8,25 +8,26 @@ import '../styles/PersonList.css'; // Component-specific styles
 const API_URL = process.env.REACT_APP_API_URL
 console.log(API_URL)
 
-const PersonList = () => {        
-    const [people, setPeople] = useState([]);
-    const [notification, setNotification] = useState('');
+const PersonList = () => {
+  const [people, setPeople] = useState([]);
+  const [notification, setNotification] = useState('');
 
-    useEffect(() => {
-        const fetchPeople = async () => {
-            try{
-                const response = await axios.get(API_URL)
-                setPeople (response.data)
-            }catch(err){
-                console.log("fetching error:",err)
-            }
-        }
-        fetchPeople()
-    },[])
-    return(
-        <div className='person-list'>
-            <h1>Person list</h1>
-            <Link to="/add" className="btn btn-add add-person-button">Add Person</Link>
+  useEffect(() => {
+    const fetchPeople = async () => {
+      try {
+        const response = await axios.get(API_URL)
+        setPeople(response.data)
+      } catch (err) {
+        console.log("fetching error:", err)
+      }
+    }
+    fetchPeople()
+  }, [])
+  return (
+    <div className='person-list'>
+      <h1 className="box-container"> This is My Home Page </h1>
+      <h1>Person list</h1>
+      <Link to="/add" className="btn btn-add add-person-button">Add Person</Link>
       <table>
         <thead>
           <tr>
@@ -48,10 +49,10 @@ const PersonList = () => {
         </tbody>
       </table>
       {
-      notification && (<Notification message={notification} onClose={() => setNotification('')} />)
-        }
-        </div>
-    )
+        notification && (<Notification message={notification} onClose={() => setNotification('')} />)
+      }
+    </div>
+  )
 }
 
 export default PersonList;

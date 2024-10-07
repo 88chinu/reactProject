@@ -4,7 +4,7 @@
     align-items: center;
     padding: 20px;
     font-size: 300%;
-    color: #dc143c;
+    color: #dc143c !important;
 }
 
 .person-info {
@@ -25,8 +25,8 @@
 }
 
 .btn-back {
-    background-color: #007bff !important;
-    color: white !important;
+    background-color: #0d498a !important;
+    color: rgb(252, 246, 246) !important;
 }
 
 @media (max-width: 480px) {
