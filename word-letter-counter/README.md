@@ -1,5 +1,4 @@
 # Word Letter Counter
-
 - A simple React application that counts the number of words and letters in a text input. Users can type any text into a textarea, and the app will display the current counts of words and letters.
 
 ## Features
@@ -34,7 +33,9 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
     ```
     npm start
 - This will start the development server, and you can view the app in your browser at http://localhost:3000.
-
+  
+## Output of the Word-Letter Counter
+- ![screenshot 2024-10-11 204917](https://github.com/user-attachments/assets/90576d1e-347a-40e6-9539-212fe3b17432)
 ## Contributing
 - Feel free to submit issues or pull requests if you want to contribute to this project.
 
