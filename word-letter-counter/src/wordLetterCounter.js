@@ -4,7 +4,7 @@ import "./wordLetterCounter.css";
 
 function WordLetterCount(){
         const [text, setText] = useState("") 
-        const wordCount = text .split(/\s+/) //split the word
+        const wordCount = text.split(/\s+/) //split the word
         .filter(Boolean).length; //count the word 
 
         const letterCount = text.length; //count the letter
