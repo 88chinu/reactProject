@@ -1,6 +1,7 @@
-import './App.css';
 import Axios from 'axios';
 import { useState } from 'react';
+
+import './App.css';
 
 function App() {
     const [artist, setArtist] = useState("");
