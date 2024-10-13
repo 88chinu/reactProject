@@ -1,4 +1,8 @@
 # Password Strength Checker
+
+## Output of the password_checker
+![Screenshot 2024-10-13 230850](https://github.com/user-attachments/assets/b13e1218-ae18-43fa-8086-e2abbdd9b607)
+
 - This is a React application that checks the strength of a password entered by the user. It utilizes the ***validator*** library to determine whether the password meets certain strength criteria.
 
 ## Features
