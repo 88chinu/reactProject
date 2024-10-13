@@ -28,7 +28,7 @@
    cd lyrics-finder
 3. Install the dependencies:
    ```bash
-   npm install
+   npm install axios
 4. Start the development server:
    ```bash
    npm start
