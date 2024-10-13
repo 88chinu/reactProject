@@ -28,7 +28,7 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
 3. Install the dependencies:
 
    ```bash
-   npm install
+   npm install axios
    
 ### Running the Application
 - To start the application, run:
