@@ -1,6 +1,6 @@
 import React, { useState } from "react"; 
 import validator from 'validator'
-
+import './App.css'
 const App = () => { 
 
 	const [errorMessage, setErrorMessage] = useState('') 
@@ -18,18 +18,13 @@ const App = () => {
 	} 
 
 	return ( 
-		<div style={{ 
-			marginLeft: '200px', 
-		}}> 
+		<div className="d1"> 
 			<pre> 
 				<h2>Checking Password Strength in ReactJS</h2> 
-				<span>Enter Password: </span><input type="text"
-					onChange={(e) => validate(e.target.value)}></input> <br /> 
+				<span className="d3" >Enter Password: </span>
+				<input type="text" className="d2" onChange={(e) => validate(e.target.value)}></input> <br/> 
 				{errorMessage === '' ? null : 
-					<span style={{ 
-						fontWeight: 'bold', 
-						color: 'red', 
-					}}>{errorMessage}</span>} 
+					<span className="ebox">{errorMessage}</span>} 
 			</pre> 
 		</div> 
 	); 
