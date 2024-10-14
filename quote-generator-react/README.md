@@ -1,6 +1,9 @@
 # Advice Generator App
 
-This is a simple React application that fetches random pieces of advice from an API and displays them to the user. The user can click a button to get new advice.
+- This is a simple React application that fetches random pieces of advice from an API and displays them to the user. The user can click a button to get new advice.
+
+## Output for the Advice Generator
+![Screenshot 2024-10-14 230640](https://github.com/user-attachments/assets/47b4d3a5-bf43-4159-97cf-273004d26788)
 
 ## Features
 
