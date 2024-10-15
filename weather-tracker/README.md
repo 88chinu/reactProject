@@ -1,6 +1,6 @@
 # Weather App
 
-A simple and interactive weather application built with React that allows users to search for current weather information by city name. The app fetches data from the OpenWeatherMap API and displays temperature, weather conditions, and wind speed.
+- A simple and interactive weather application built with React that allows users to search for current weather information by city name. - The app fetches data from the OpenWeatherMap API and displays temperature, weather conditions, and wind speed.
 
 ## Features
 
@@ -36,8 +36,9 @@ A simple and interactive weather application built with React that allows users 
 - Enter a city name in the search bar.
 - Press "Enter" to fetch the weather data.
 - View the current weather, including temperature, description, and wind speed
+  
 ## Demo video for the output
-<!-- Update with the actual path to your screenshot -->
+  https://github.com/user-attachments/assets/3138a8b7-95f6-4b6c-aa22-14a88b81d9ad
 
 ## License
 - This project is licensed under the MIT License - see the LICENSE file for details.
