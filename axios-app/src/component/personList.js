@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import './personList.css'
 
-const API_URL = 'https://3001-88chinu-reactproject-onoien8nefn.ws-us116.gitpod.io/persons';
+const API_URL = 'https://3001-88chinu-reactproject-5x72go8wrtv.ws-us116.gitpod.io/persons';
 
 const PersonList = () => {
     const [persons, setPersons] = useState([]);
@@ -59,9 +59,9 @@ const PersonList = () => {
     // DELETE operation
     const deletePerson = async (id) => {
         try {
-            await axios.delete(`${API_URL}/${id}`);
+             const response = await axios.delete(`${API_URL}/${id}`);
             setPersons(persons.filter(person => person.id !== id));
-            alert(`Person with ID ${id} has been removed.`);
+            alert(`Person with Name ${response.data.name} has been removed.`);
         } catch (error) {
             console.error('Error deleting person:', error);
             alert('Failed to delete person. Please try again.');

@@ -2,8 +2,13 @@
   "persons": [
     {
       "id": "bdcc",
-      "name": "chinu",
+      "name": "Chinu",
       "age": "20"
+    },
+    {
+      "id": "3fa9",
+      "name": "Nirmal",
+      "age": "26"
     }
   ]
 }
