@@ -57,7 +57,8 @@ Make sure you have the following installed:
    PUT    /persons/:id    - Update an existing person
    DELETE /persons/:id    - Delete a person
 
-## Output of the axios-app project
+## Output of the axios-app project:
+https://github.com/user-attachments/assets/9fb6b549-a874-48aa-81bf-ca7a6082176d
 
 ## Usage
  - To add a person, fill in the name and age fields in the form and click "Add Person."
