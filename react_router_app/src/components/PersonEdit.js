@@ -53,24 +53,11 @@ const PersonEdit = () => {
     <div className="box-container">
       <h1>Edit Person</h1>
       <form onSubmit={handleUpdate} className="form-container">
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={person.name}
-          onChange={handleChange}
-          required
-          className="input-field"
-        />
-        <input
-          type="number"
-          name="age"
-          placeholder="Age"
-          value={person.age}
-          onChange={handleChange}
-          required
-          className="input-field"
-        />
+        <input type="text" name="name" placeholder="Name" value={person.name} onChange={handleChange}
+          required className="input-field"/>
+        <input type="number"
+          name="age" placeholder="Age" value={person.age} onChange={handleChange}
+          required className="input-field"/>
         <div className="person-actions">
           <button type="submit" className="btn btn-update">Update</button>
           <button type="button" className="btn btn-cancel" onClick={handleCancel}>Cancel</button>

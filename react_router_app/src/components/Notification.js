@@ -10,3 +10,4 @@ const Notification = ({ message, onClose }) => {
         </div>
     )
 }
+export default Notification
