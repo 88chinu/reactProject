@@ -1,6 +1,6 @@
 # React Router App
 
-This is a simple React application that demonstrates the use of React Router for navigation between different components.
+- This is a simple React application that demonstrates the use of React Router for navigation between different components.
 
 ## Features
 
@@ -11,9 +11,7 @@ This is a simple React application that demonstrates the use of React Router for
 ## Getting Started
 
 ### Prerequisites
-
-Make sure you have the following installed on your machine:
-
+- Make sure you have the following installed on your machine:
 - [Node.js](https://nodejs.org/) (v14 or higher)
 - [npm](https://www.npmjs.com/get-npm) (comes with Node.js)
 
@@ -31,6 +29,9 @@ Make sure you have the following installed on your machine:
    ```bash
      npm start
 - Your app should now be running on ***http://localhost:3000***.
+  
+##Output of the react-router-app
+https://github.com/user-attachments/assets/7e8c3ea4-ae66-4e8d-b8f8-20f1e632a859
 
 ## Usage
 - Navigate between different routes using the navigation links provided in the app.
