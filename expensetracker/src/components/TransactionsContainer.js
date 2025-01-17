@@ -1,6 +1,4 @@
-// FileName: TransactionsContainer.js
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import styled from "styled-components";
 import TransactionItem from "./TransactionItem";
 
@@ -28,23 +26,25 @@ const TransactionsContainer = ({ transactions, removeTransaction }) => {
   const [searchInput, setSearchInput] = useState("");
   const [filteredTransactions, setFilteredTransactions] = useState(transactions);
 
-  const filteredData = (searchInput) => {
-    if (!searchInput || !searchInput.trim().length) {
-      setFilteredTransactions(transactions);
-      return;
-    }
+  // UseCallback ensures that filteredData doesn't change unless searchInput or transactions change.
+  const filteredData = useCallback(
+    (searchInput) => {
+      if (!searchInput || !searchInput.trim().length) {
+        setFilteredTransactions(transactions);
+        return;
+      }
 
-    let filtered = [...filteredTransactions];
-    filtered = filtered.filter(
-      (item) =>
+      const filtered = transactions.filter((item) =>
         item.details.toLowerCase().includes(searchInput.toLowerCase().trim())
-    );
-    setFilteredTransactions(filtered);
-  };
+      );
+      setFilteredTransactions(filtered);
+    },
+    [transactions]
+  );
 
   useEffect(() => {
     filteredData(searchInput);
-  }, [transactions, searchInput]);
+  }, [filteredData, searchInput]); // Include filteredData in the dependency array
 
   return (
     <Container>

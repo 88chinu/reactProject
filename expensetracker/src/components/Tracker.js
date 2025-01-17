@@ -1,11 +1,10 @@
-// FileName: Tracker.js
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import styled from "styled-components";
 import AddTransaction from "./AddTransaction";
 import OverviewComponent from "./OverviewComponent";
 import TransactionsContainer from "./TransactionsContainer";
 
+// Styled Components
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -31,14 +30,6 @@ const TransactionDetails = styled.div`
   align-items: center;
   gap: 20px;
   margin-bottom: 25px;
-`;
-
-const THeading = styled.div`
-font-size: 30px;
-font-weight: bold;
-text-align: center;
-margin-bottom: 20px;
-color: #44E610;
 `;
 
 const ExpenseBox = styled.div`
@@ -70,32 +61,30 @@ const Tracker = () => {
   };
 
   const removeTransaction = (id) => {
-    const updatedTransactions = transactions
-                                .filter((transaction) => transaction.id !== id);
+    const updatedTransactions = transactions.filter((transaction) => transaction.id !== id);
     setTransactions(updatedTransactions);
   };
 
-  const calculateTransactions = () => {
+  const calculateTransactions = useCallback(() => {
     let exp = 0;
     let inc = 0;
 
-    transactions.map((item) => {
+    transactions.forEach((item) => {
       item.transType === "expense"
-        ? (exp = exp + item.amount)
-        : (inc = inc + item.amount);
+        ? (exp += item.amount)
+        : (inc += item.amount);
     });
 
     setExpense(exp);
     setIncome(inc);
-  };
+  }, [transactions]);
 
   useEffect(() => {
     calculateTransactions();
-  }, [transactions]);
+  }, [transactions, calculateTransactions]);
 
   return (
     <Container>
-        <THeading>GeeksforGeeks</THeading>
       <Heading>Expense Tracker</Heading>
       <OverviewComponent
         toggle={toggle}
