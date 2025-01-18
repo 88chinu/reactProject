@@ -1,10 +1,17 @@
-// FileName: Navbar.js
 import React from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
+import styled from "styled-components";
 
-const Navbar = () => {
+// Navbar with gradient background
+const NavBarContainer = styled.nav`
+  background: linear-gradient(to right, #50cc38, #4cf32c); // Gradient background
+  padding: 10px 20px;
+`;
+
+const Navbar = ({ darkMode, setDarkMode }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <NavBarContainer className={`navbar navbar-expand-lg ${darkMode ? "navbar-dark" : "navbar-light"}`}>
       <div className="container">
         <a className="navbar-brand" href="/">
           Expense Tracker
@@ -39,8 +46,17 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+
+        {/* Dark Mode Toggle Button with Icon */}
+        <button
+          className={`btn ${darkMode ? "btn-light" : "btn-dark"} btn-sm`}
+          onClick={() => setDarkMode(!darkMode)}
+          aria-label="Toggle dark mode"
+        >
+          {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+        </button>
       </div>
-    </nav>
+    </NavBarContainer>
   );
 };
 

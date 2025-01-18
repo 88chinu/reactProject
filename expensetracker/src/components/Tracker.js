@@ -4,24 +4,26 @@ import AddTransaction from "./AddTransaction";
 import OverviewComponent from "./OverviewComponent";
 import TransactionsContainer from "./TransactionsContainer";
 
-// Styled Components
+// Styled Components for Tracker
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 100%;
   max-width: 100%;
-  background-color: #fff;
+  height: 100vh;
   padding: 30px 20px;
-  border: 1px solid #000;
+  background-color: ${(props) => (props.darkMode ? "#2c2c2c" : "#fff")};
+  color: ${(props) => (props.darkMode ? "#fff" : "#000")};
   border-radius: 5px;
-  margin: 10px;
+  box-shadow: ${(props) => (props.darkMode ? "0px 0px 15px rgba(255, 255, 255, 0.1)" : "0px 0px 15px rgba(0, 0, 0, 0.1)")};
 `;
 
 const Heading = styled.h1`
-  font-size: 30px;
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color: ${(props) => (props.darkMode ? "#fff" : "#000")};
 `;
 
 const TransactionDetails = styled.div`
@@ -37,7 +39,7 @@ const ExpenseBox = styled.div`
   border: 1px solid #000;
   border-radius: 5px;
   padding: 10px 20px;
-  background-color: #fff;
+  background-color: ${(props) => (props.darkMode ? "#444" : "#fff")};
   & span {
     font-weight: bold;
     font-size: 25px;
@@ -48,21 +50,20 @@ const ExpenseBox = styled.div`
 
 const IncomeBox = styled(ExpenseBox)``;
 
-const Tracker = () => {
+const Tracker = ({ darkMode }) => {
   const [toggle, setToggle] = useState(false);
   const [transactions, setTransactions] = useState([]);
   const [expense, setExpense] = useState(0);
   const [income, setIncome] = useState(0);
 
   const AddTransactions = (payload) => {
-    const transactionArray = [...transactions];
-    transactionArray.push(payload);
-    setTransactions(transactionArray);
+    setTransactions((prevTransactions) => [...prevTransactions, payload]);
   };
 
   const removeTransaction = (id) => {
-    const updatedTransactions = transactions.filter((transaction) => transaction.id !== id);
-    setTransactions(updatedTransactions);
+    setTransactions((prevTransactions) =>
+      prevTransactions.filter((transaction) => transaction.id !== id)
+    );
   };
 
   const calculateTransactions = useCallback(() => {
@@ -70,9 +71,11 @@ const Tracker = () => {
     let inc = 0;
 
     transactions.forEach((item) => {
-      item.transType === "expense"
-        ? (exp += item.amount)
-        : (inc += item.amount);
+      if (item.transType === "expense") {
+        exp += item.amount;
+      } else {
+        inc += item.amount;
+      }
     });
 
     setExpense(exp);
@@ -84,8 +87,8 @@ const Tracker = () => {
   }, [transactions, calculateTransactions]);
 
   return (
-    <Container>
-      <Heading>Expense Tracker</Heading>
+    <Container darkMode={darkMode}>
+      <Heading darkMode={darkMode}>Expense Tracker</Heading>
       <OverviewComponent
         toggle={toggle}
         setToggle={setToggle}
@@ -101,11 +104,11 @@ const Tracker = () => {
       )}
 
       <TransactionDetails>
-        <ExpenseBox isExpense>
+        <ExpenseBox darkMode={darkMode} isExpense>
           Expense <span>₹{expense}</span>
         </ExpenseBox>
 
-        <IncomeBox>
+        <IncomeBox darkMode={darkMode}>
           Budget <span>₹{income}</span>
         </IncomeBox>
       </TransactionDetails>
