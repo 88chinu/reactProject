@@ -1,5 +1,3 @@
-// FileName: AddTransaction.js
-
 import { useState } from "react";
 import styled from "styled-components";
 
@@ -36,7 +34,7 @@ const RadioBtn = styled(RadioContainer)`
 `;
 
 const SubmitBtn = styled.button`
-  background-color: #44E610;
+  background-color: #44e610;
   color: #fff;
   border-radius: 5px;
   padding: 10px 20px;
@@ -44,41 +42,30 @@ const SubmitBtn = styled.button`
   outline: none;
   cursor: pointer;
   &:hover {
-    background-color: #44E610;
+    background-color: #44e610;
   }
 `;
 
 const AddTransaction = ({ setToggle, AddTransactions }) => {
-  const [amount, setAmount] = useState("");
+  const [name, setName] = useState("");
   const [details, setDetails] = useState("");
+  const [amount, setAmount] = useState("");
   const [transType, setTransType] = useState("expense");
 
   const AddTransactionData = () => {
     AddTransactions({
-      amount: Number(amount),
+      name,
       details,
+      amount: Number(amount),
       transType,
       id: Date.now(),
     });
-    setToggle();
+    setToggle(); // Close the modal or form after submission
   };
 
   return (
     <Container>
-      <Input
-        type={"number"}
-        placeholder="Enter Amount"
-        value={amount}
-        onChange={(e) => setAmount(e.target.value)}
-      />
-
-      <Input
-        type={"text"}
-        placeholder="Enter Details"
-        value={details}
-        onChange={(e) => setDetails(e.target.value)}
-      />
-
+      {/* Radio buttons for transaction type */}
       <RadioContainer>
         <RadioBtn>
           <input
@@ -105,6 +92,31 @@ const AddTransaction = ({ setToggle, AddTransactions }) => {
         </RadioBtn>
       </RadioContainer>
 
+      {/* Conditionally render input fields based on transaction type */}
+      {transType === "income" && (
+        <Input
+          type={"text"}
+          placeholder="Enter Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      )}
+
+      <Input
+        type={"text"}
+        placeholder="Enter Details"
+        value={details}
+        onChange={(e) => setDetails(e.target.value)}
+      />
+
+      <Input
+        type={"number"}
+        placeholder="Enter Amount"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+      />
+
+      {/* Submit button */}
       <SubmitBtn onClick={AddTransactionData}>Add Transaction</SubmitBtn>
     </Container>
   );
