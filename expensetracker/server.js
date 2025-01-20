@@ -1,8 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-const authRoutes = require('./routes/authRoutes');
-const transactionRoutes = require('./routes/transactionRoutes');
+const authRoutes = require('./routes/authRoute');
+const transactionRoutes = require('./routes/transactionRoute');
 const { errorHandler } = require('./middleware/errorMiddleware');
 
 dotenv.config();
