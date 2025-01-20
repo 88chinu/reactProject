@@ -1,75 +1,26 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 import TransactionItem from "./TransactionItem";
 
-const Container = styled.div``;
-
-const Heading = styled.h2`
-  font-size: 25px;
-  font-weight: 600;
-`;
-
-const SearchInput = styled.input`
-  width: 100%;
-  padding: 15px 20px;
-  outline: none;
+const Container = styled.div`
+  padding: 20px;
+  background-color: #ffffff;
   border-radius: 5px;
-  margin: 5px 0;
-  border: 1px solid #e6e8e9;
-  background-color: #e6e8e9;
-  margin-bottom: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
-const TransactionItems = styled.div``;
-
-const TransactionsContainer = ({ transactions, removeTransaction }) => {
-  const [searchInput, setSearchInput] = useState("");
-  const [filteredTransactions, setFilteredTransactions] = useState(transactions);
-
-  // UseCallback ensures that filteredData doesn't change unless searchInput or transactions change.
-  const filteredData = useCallback(
-    (searchInput) => {
-      if (!searchInput || !searchInput.trim().length) {
-        setFilteredTransactions(transactions);
-        return;
-      }
-
-      const filtered = transactions.filter((item) =>
-        item.details.toLowerCase().includes(searchInput.toLowerCase().trim())
-      );
-      setFilteredTransactions(filtered);
-    },
-    [transactions]
-  );
-
-  useEffect(() => {
-    filteredData(searchInput);
-  }, [filteredData, searchInput]); // Include filteredData in the dependency array
+const TransactionsContainer = () => {
+  const transactions = [
+    { id: 1, description: "Grocery", amount: -50 },
+    { id: 2, description: "Salary", amount: 500 },
+  ];
 
   return (
     <Container>
-      <Heading>Transactions</Heading>
-
-      <SearchInput
-        type="text"
-        placeholder="Search here"
-        value={searchInput}
-        onChange={(e) => setSearchInput(e.target.value)}
-      />
-
-      <TransactionItems>
-        {filteredTransactions?.length ? (
-          filteredTransactions.map((transaction) => (
-            <TransactionItem
-              transaction={transaction}
-              key={transaction.id}
-              removeTransaction={removeTransaction}
-            />
-          ))
-        ) : (
-          <p>No Transactions</p>
-        )}
-      </TransactionItems>
+      <h3>Transaction History</h3>
+      {transactions.map((transaction) => (
+        <TransactionItem key={transaction.id} transaction={transaction} />
+      ))}
     </Container>
   );
 };

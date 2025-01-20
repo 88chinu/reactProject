@@ -1,29 +1,31 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Tracker from "./components/Tracker";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-
-// Global styled component to manage dark mode styles
-const AppContainer = styled.div`
-  background-color: ${(props) => (props.darkMode ? "#333" : "#f8f9fa")};
-  color: ${(props) => (props.darkMode ? "#fff" : "#000")};
-  min-height: 100vh;
-  transition: background-color 0.3s, color 0.3s;
-`;
+import Tracker from "./components/Tracker";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Reports from "./components/Reports";
+import ExportImport from "./components/ExportImport";
+import { AuthProvider } from "./context/AuthContext";
+import GlobalStyles from "./globalStyles";
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
   return (
-    <AppContainer darkMode={darkMode}>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className="container">
-        <Tracker darkMode={darkMode} />
-      </div>
-      <Footer />
-    </AppContainer>
+    <AuthProvider>
+      <Router>
+        <GlobalStyles />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Tracker />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/export-import" element={<ExportImport />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </AuthProvider>
   );
 };
 

@@ -1,15 +1,15 @@
-// FileName: Footer.js
 import React from "react";
+import styled from "styled-components";
+
+const FooterContainer = styled.footer`
+  background: #282c34;
+  color: white;
+  padding: 20px;
+  text-align: center;
+`;
 
 const Footer = () => {
-  return (
-    <footer className="bg-dark text-center text-white py-3 mt-4">
-      <p className="mb-0">&copy; 2025 Expense Tracker. All rights reserved.</p>
-      <p className="mb-0">
-        Developed by Chinmaya
-      </p>
-    </footer>
-  );
+  return <FooterContainer>© 2025 Expense Tracker. All Rights Reserved.</FooterContainer>;
 };
 
 export default Footer;

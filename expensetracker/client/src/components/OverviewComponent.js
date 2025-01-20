@@ -1,44 +1,20 @@
-// FileName: OverviewComponent.js
-
+import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-`;
-
-const Balance = styled.h2`
-  font-weight: 500;
-  & span {
-    font-weight: bold;
-  }
-`;
-
-const AddBtn = styled.button`
-  cursor: pointer;
-  background-color: rgb(68, 230, 16);
-  color: rgb(255, 255, 255);
-  padding: 7px 20px;
-  font-size: 16px;
-  border: none;
-  text-transform: uppercase;
+const Overview = styled.div`
+  padding: 20px;
+  background-color: #f1f1f1;
   border-radius: 5px;
+  margin-bottom: 20px;
 `;
 
-const OverviewComponent = ({ toggle, setToggle, income, expense }) => {
-  const bal = income - expense;
-
+const OverviewComponent = () => {
   return (
-    <Container>
-      <Balance>
-        Balance <span>₹{bal}</span>
-      </Balance>
-      <AddBtn onClick={() => setToggle(!toggle)}>
-        {toggle ? "Cancel" : "Add"}
-      </AddBtn>
-    </Container>
+    <Overview>
+      <h2>Overview</h2>
+      <p>Total Income: $1000</p>
+      <p>Total Expenses: $800</p>
+    </Overview>
   );
 };
 
