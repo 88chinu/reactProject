@@ -1,8 +1,7 @@
 # Getting Started with Create React App
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-- (https://expensetracker-wdkj.onrender.com/) Visit to this
-
+  
 ## Available Scripts
 
 - In the project directory, you can run:
