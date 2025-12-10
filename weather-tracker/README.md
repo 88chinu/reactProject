@@ -21,7 +21,7 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/weather-app.git
+   git clone https://github.com/88chinu/weather-app.git
    cd weather-app
 2. Install dependencies:
    ```
@@ -37,9 +37,6 @@
 - Press "Enter" to fetch the weather data.
 - View the current weather, including temperature, description, and wind speed
   
-## Demo video for the output
-  https://github.com/user-attachments/assets/3138a8b7-95f6-4b6c-aa22-14a88b81d9ad
-
 ## License
 - This project is licensed under the MIT License - see the LICENSE file for details.
 
