@@ -1,17 +1,11 @@
-.App {
-  text-align: center;
-  background-color: #1f293f;
-}
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&display=swap");
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat&display=swap");
 .App {
     min-height: 100vh;
-    height: auto;
+    background-color: #1f293f;
     text-align: center;
     font-family: "Montserrat", sans-serif;
+    padding-top: 40px;
 }
 
 h1 {
@@ -20,8 +14,10 @@ h1 {
 }
 
 pre {
-    font-size: 24px;
+    font-size: 18px;
     color: #ebeef1;
+    white-space: pre-wrap;
+    padding: 20px;
 }
 
 hr {
@@ -30,46 +26,17 @@ hr {
 }
 
 .inp {
-    width: 200px;
+    width: 220px;
     height: 40px;
     border: 2px solid #113a5d;
-    margin: 0px 10px;
-    padding-left: 6px;
-    font-size: 22px;
+    margin: 10px;
+    padding-left: 8px;
+    font-size: 18px;
 }
 
 .btn {
-    width: 90px;
+    width: 120px;
     height: 40px;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    font-size: 16px;
+    cursor: pointer;
 }
