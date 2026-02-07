@@ -22,3 +22,9 @@ p {
 	margin: 5px 0; 
 	color: #372626; 
 } 
+
+button{
+	align-items: center;
+	background-color: green;
+	color: #000;	
+}

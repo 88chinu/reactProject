@@ -1,31 +1,41 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import "./wordLetterCounter.css"; 
 
+function WordLetterCount() {
+  const [text, setText] = useState("");
 
-function WordLetterCount(){
-        const [text, setText] = useState("") 
-        const wordCount = text.split(/\s+/) //split the word
-        .filter(Boolean).length; //count the word 
+  const wordCount = text
+    .split(/\s+/)
+    .filter(Boolean).length;
 
-        const letterCount = text.length; //count the letter
-      
-        const handleTextChange = (e) => { 
-            setText(e.target.value)
-        }
-    return(
-        <div>
-            <textarea placeholder= "Type anything you want here..."
-                onChange={handleTextChange} //handle the event
-              value={text} rows={10} cols={70} //captior user input from this state
-              />
-             <p> 
-                Word Count: {wordCount} 
-            </p> 
-            <p> 
-                Letter Count: {letterCount} 
-            </p> 
-        </div>
-    )
+  const letterCount = text.length;
+
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const handleClear = () => {
+    setText("");
+  };
+
+  return (
+    <div>
+      <textarea
+        placeholder="Type anything you want here..."
+        onChange={handleTextChange}
+        value={text}
+        rows={10}
+        cols={70}
+      />
+
+      <br />
+
+      <button onClick={handleClear}>Clear</button>
+
+      <p>Word Count: {wordCount}</p>
+      <p>Letter Count: {letterCount}</p>
+    </div>
+  );
 }
 
-export default WordLetterCount
+export default WordLetterCount;
